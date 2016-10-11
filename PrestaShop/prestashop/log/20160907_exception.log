@@ -1,0 +1,118 @@
+*ERROR* 	2016/09/07 - 15:15:04: Unknown column 'manufacturer_name' in 'field list'<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, `manufacturer_name`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) 
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 15:54:25: Unknown column 'manufacturer_name' in 'field list'<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, `manufacturer_name`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) 
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 15:55:55: Unknown column 'manufacturer_name' in 'field list'<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, `manufacturer_name`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) 
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 16:09:57: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'm.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_produc' at line 3<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`m.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) INNER JOIN `ps_manufacturer` m ON (m.`id_manufacturer` = a.`id_manufacturer`)  
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 16:11:03: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'm.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_produc' at line 3<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`m.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) INNER JOIN `ps_manufacturer` m ON (m.`id_manufacturer` = a.`id_manufacturer`)  
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 16:12:25: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'm.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_produc' at line 3<br /><br /><pre>SELECT
+								a.`id_product`, `reference`, `EAN13`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger`m.name
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) INNER JOIN `ps_manufacturer` m ON (m.`id_manufacturer` = a.`id_manufacturer`)  
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php
+*ERROR* 	2016/09/07 - 16:16:52: Unknown column 'manufacturer_name' in 'field list'<br /><br /><pre>SELECT
+								a.`id_product`, b.`name` AS `name`, `reference`, `EAN13`, `manufacturer_name`, a.`price` AS `price`, sa.`active` AS `active`
+			, shop.`name` AS `shopname`, a.`id_shop_default`, image_shop.`id_image` AS `id_image`, cl.`name` AS `name_category`, sa.`price`, 0 AS `price_final`, a.`is_virtual`, pd.`nb_downloadable`, sav.`quantity` AS `sav_quantity`, sa.`active`, IF(sav.`quantity`<=0, 1, 0) AS `badge_danger` , m.`name`
+			FROM `ps_product` a 
+			LEFT JOIN `ps_product_lang` b ON (b.`id_product` = a.`id_product` AND b.`id_lang` = 1 AND b.`id_shop` = 1)
+			
+		LEFT JOIN `ps_stock_available` sav ON (sav.`id_product` = a.`id_product` AND sav.`id_product_attribute` = 0
+		 AND sav.id_shop = 1  AND sav.id_shop_group = 0 )  JOIN `ps_product_shop` sa ON (a.`id_product` = sa.`id_product` AND sa.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_category_lang` cl ON (sa.`id_category_default` = cl.`id_category` AND b.`id_lang` = cl.`id_lang` AND cl.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_shop` shop ON (shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image_shop` image_shop ON (image_shop.`id_product` = a.`id_product` AND image_shop.`cover` = 1 AND image_shop.id_shop = a.id_shop_default)
+				LEFT JOIN `ps_image` i ON (i.`id_image` = image_shop.`id_image`)
+				LEFT JOIN `ps_product_download` pd ON (pd.`id_product` = a.`id_product`) INNER JOIN `ps_manufacturer` m ON (m.`id_manufacturer` = a.`id_manufacturer`)  
+			 WHERE 1  
+			 
+			 ORDER BY a.`id_product` ASC  LIMIT 0, 50</pre> at line 791 in file classes/db/Db.php

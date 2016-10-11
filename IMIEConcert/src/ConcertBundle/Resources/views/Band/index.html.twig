@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ConcertBundle:Band:index{% endblock %}
+{% block content %}
+    <h1>Gestion des Groupes</h1>
+        <a href="{{path("concert_band_add")}}"><button>AJOUTER GROUPE</button></a>
+        <table border="1px solid black">
+            <tr>
+                <th>Nom</th>
+                <th></th>
+            </tr>
+            
+                {% for b in band %}
+                    <tr>
+                    <td><a href="{{ path('concert_band_planning', { 'id': b.id } ) }}" >{{ b.name }}</a></td>
+                    <td><a href="{{path('concert_band_delete', { 'id': b.id } )}}">X</a></td>
+                    </tr>
+                {% endfor %}
+            
+        </table>
+{% endblock %}
+{#{{ dump(name) }}#}

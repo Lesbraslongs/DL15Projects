@@ -1,0 +1,59 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ConcertBundle:Place:planning{% endblock %}
+
+{% block content %}
+<h1>Planning de la salle {{ place.name }}</h1>
+    <h2>Concert à venir : </h2>
+    <table border = "1px solid black">
+        <tr>
+            <th>Groupe</th>
+            <th>Date</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th></th>
+        </tr>
+        {% for p in place.concert %}
+            {% if "now"|date('Ymd')  < p.startingDate|date('Ymd') %}
+                {% if p.cancel == false %}
+                    <tr>
+                        <td>{{ p.band.name }}</td>
+                        <td>{{ p.startingDate | date("d-m-Y") }}</td>
+                        <td>{{ p.startingDate | date("H:i") }}</td>
+                        <td>{{ p.endingDate | date("H:i") }}</td>
+                        <td>Annuler</td>
+                    </tr>
+                {% else %}
+                    <tr style="background-color: red">
+                        <td>{{ p.band.name }}</td>
+                        <td>{{ p.startingDate | date("d-m-Y") }}</td>
+                        <td>{{ p.startingDate | date("H:i") }}</td>
+                        <td>{{ p.endingDate | date("H:i") }}</td>
+                        <td>Reprogrammer</td>
+                    </tr> 
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </table>
+
+    <h2>Concert passés : </h2>
+    <table border = "1px solid black">
+        <tr>
+            <th>Groupe</th>
+            <th>Date</th>
+            <th>Début</th>
+            <th>Fin</th>
+        </tr>
+        {% for p in place.concert %}
+            {% if "now"|date('Ymd')  > p.startingDate|date('Ymd') %}
+                <tr>
+                    <td>{{ p.band.name }}</td>
+                    <td>{{ p.startingDate | date("d-m-Y") }}</td>
+                    <td>{{ p.startingDate | date("H:i") }}</td>
+                    <td>{{ p.endingDate | date("H:i") }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+{% endblock %}

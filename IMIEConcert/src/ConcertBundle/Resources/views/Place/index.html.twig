@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ConcertBundle:Place:index{% endblock %}
+    {% block content %}
+        <h1>Gestion des Salles</h1>
+        <a href="{{path("concert_place_add")}}"><button>AJOUTER SALLE</button></a>
+        <table border="1px solid black">
+            <tr>
+                <th>Nom</th>
+                <th>Ville</th>
+                <th>Telephone</th>
+                <th></th>
+            </tr>
+            
+                {% for p in place %}
+                    <tr>
+                        <td><a href="{{ path('concert_place_planning', { 'id': p.id } ) }}" >{{ p.name }}</a></td>
+                        <td>{{ p.city }}</td>
+                        <td>{{ p.phone }}</td>
+                        <td><a href="{{path('concert_place_delete', { 'id': p.id } )}}">X</a></td>
+                    </tr>
+                {% endfor %}
+            
+        </table>
+    {% endblock %}

@@ -1,0 +1,6 @@
+{
+    "name": "admin/composer",
+    "require": {
+        "doctrine/orm": "^2.5"
+    }
+}

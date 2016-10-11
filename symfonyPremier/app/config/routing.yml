@@ -1,0 +1,8 @@
+toto:
+    resource: "@TotoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /

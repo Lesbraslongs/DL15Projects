@@ -1,0 +1,4 @@
+services:
+#    concert.example:
+#        class: ConcertBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

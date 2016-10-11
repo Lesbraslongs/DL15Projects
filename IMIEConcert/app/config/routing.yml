@@ -1,0 +1,4 @@
+concert:
+    resource: "@ConcertBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,25 @@
+default: &default
+    suites:
+        gallery_bundle_suite:
+            contexts:
+                - FSi\Bundle\GalleryBundle\Behat\Context\DataContext:
+                    kernel: "@kernel"
+                - FSi\Bundle\GalleryBundle\Behat\Context\WebUserContext:
+                    kernel: "@kernel"
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/fixtures/project/app/bootstrap.php
+                path: features/fixtures/project/app/AppKernel.php
+        Behat\MinkExtension:
+            base_url: http://127.0.0.1:8080/app_test.php/
+            javascript_session: javascript
+            sessions:
+                default:
+                    symfony2: ~
+                javascript:
+                    selenium2: ~
+        SensioLabs\Behat\PageObjectExtension:
+            namespaces:
+                page:
+                    - FSi\Bundle\GalleryBundle\Behat\Context\Page

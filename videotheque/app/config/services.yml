@@ -1,0 +1,4 @@
+services:
+    videotheque.image_uploader:
+            class: web\Iabsis\VideothequeBundle\FileUploader
+            arguments: ['%images_directory%']

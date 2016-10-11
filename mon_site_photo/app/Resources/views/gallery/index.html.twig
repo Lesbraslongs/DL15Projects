@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Galeries</h1>
+
+     <a href="{{ path('gallery_new') }}"><button>AJOUTER GALERIE</button></a>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom de la Galerie : </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gallery in galleries %}
+            <tr>
+                <td><a href="{{ path('diapo_index', { 'id': gallery.id }) }}">{{ gallery.titre }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('gallery_show', { 'id': gallery.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

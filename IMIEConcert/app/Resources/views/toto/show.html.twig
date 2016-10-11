@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Toto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ toto.id }}</td>
+            </tr>
+            <tr>
+                <th>Titi</th>
+                <td>{{ toto.titi }}</td>
+            </tr>
+            <tr>
+                <th>Tata</th>
+                <td>{{ toto.tata }}</td>
+            </tr>
+            <tr>
+                <th>Toto</th>
+                <td>{{ toto.toto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('toto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('toto_edit', { 'id': toto.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

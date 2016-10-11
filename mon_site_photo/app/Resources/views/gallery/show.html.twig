@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Galerie {{ gallery.titre }}</h1>
+    {% for diapo in gallery.diapo %}
+        <img  src="{{diapo.photoRandom}}" alt="{{diapo.titre}}"/>
+    {% endfor %}
+    <ul>
+        <li>
+            <a href="{{ path('gallery_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

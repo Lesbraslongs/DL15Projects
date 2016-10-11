@@ -1,0 +1,23 @@
+test_add:
+    path:     /toto/add/{id}
+    defaults: { _controller: TestBundle:Default:add,  id: 1 }
+    requirements :
+        id: \d+
+
+test_homepage:
+    path:     /toto/{id}
+    defaults: { _controller: TestBundle:Default:index, id: 1 }
+    requirements :
+        id: \d+
+
+test_edit:
+    path:     /toto/edit/{id}
+    defaults: { _controller: TestBundle:Default:edit, id: 1 }
+    requirements :
+        id: \d+
+
+test_delete:
+    path:     /toto/del/{id}
+    defaults: { _controller: TestBundle:Default:delete, id: 1 }
+    requirements :
+        id: \d+

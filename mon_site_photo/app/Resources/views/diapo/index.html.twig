@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Diapos</h1>
+
+    <a href="{{ path('diapo_new') }}"><button>AJOUTER DIAPO</button></a>
+
+
+    <table>
+        {% for diapo in diapos %}
+        <thead>
+            <tr>
+                <th>{{diapo.titre}} </th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td><a href="{{ path('photo_index', { 'id': diapo.id }) }}"><img class="photoRandom" src="{{diapo.photoRandom}}" alt="{{diapo.titre}}"/></a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('diapo_show', { 'id': diapo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('diapo_edit', { 'id': diapo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

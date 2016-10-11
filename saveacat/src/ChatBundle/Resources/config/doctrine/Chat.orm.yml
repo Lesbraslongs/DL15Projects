@@ -1,0 +1,34 @@
+ChatBundle\Entity\Chat:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        couleur:
+            type: string
+            length: 255
+        qualite1:
+            type: string
+            length: 255
+        qualite2:
+            type: string
+            length: 255
+        defaut:
+            type: string
+            length: 255
+        croquettes:
+            type: string
+            length: 255
+        disponible:
+            type: string
+            length: 255
+        dispo:
+            type: boolean
+    lifecycleCallbacks: {  }

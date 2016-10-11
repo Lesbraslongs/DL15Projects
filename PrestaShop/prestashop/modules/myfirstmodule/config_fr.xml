@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>myfirstmodule</name>
+	<displayName><![CDATA[Mon Premier Module]]></displayName>
+	<version><![CDATA[0.1.0]]></version>
+	<description><![CDATA[Ajoute un block de publicit&eacute; aux sections selectionn&eacute;es de votre site de e-commerce.]]></description>
+	<author><![CDATA[LesBrasLongs Concept]]></author>
+	<tab><![CDATA[advertising_marketing]]></tab>
+	<confirmUninstall><![CDATA[Etes vous sur de vouloir désinstaller le module ?]]></confirmUninstall>
+	<is_configurable>0</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

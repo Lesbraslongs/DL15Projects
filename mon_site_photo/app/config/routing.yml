@@ -1,0 +1,4 @@
+gallery:
+    resource: "@GalleryBundle/Controller/"
+    type:     annotation
+    prefix:   /

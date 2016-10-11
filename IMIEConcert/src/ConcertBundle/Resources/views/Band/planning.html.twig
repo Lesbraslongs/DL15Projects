@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ConcertBundle:Band:planning{% endblock %}
+
+{% block content %}
+<h1>Planning du groupe {{ band.name }}</h1>
+    <h2>Concerts à venir : </h2>
+    <table border = "1px solid black">
+        <tr>
+            <th>Groupe</th>
+            <th>Date</th>
+            <th>Début</th>
+            <th>Fin</th>
+        </tr>
+        {% for b in band.concert %}
+            {% if "now"|date('Ymd')  < b.startingDate|date('Ymd') %}
+                <tr>
+                    <td>{{ b.band.name }}</td>
+                    <td>{{ b.startingDate | date("d-m-Y") }}</td>
+                    <td>{{ b.startingDate | date("H:i") }}</td>
+                    <td>{{ b.endingDate | date("H:i") }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+    <h2>Concerts passés : </h2>
+    <table border = "1px solid black">
+        <tr>
+            <th>Groupe</th>
+            <th>Date</th>
+            <th>Début</th>
+            <th>Fin</th>
+        </tr>
+        {% for b in band.concert %}
+            {% if "now"|date('Ymd')  > b.startingDate|date('Ymd') %}
+                <tr>
+                    <td>{{ b.band.name }}</td>
+                    <td>{{ b.startingDate | date("d-m-Y") }}</td>
+                    <td>{{ b.startingDate | date("H:i") }}</td>
+                    <td>{{ b.endingDate | date("H:i") }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endblock %}

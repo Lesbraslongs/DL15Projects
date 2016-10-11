@@ -1,0 +1,44 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ConcertBundle:Concert:index{% endblock %}
+
+{% block content %}
+<h1>Concerts : </h1>
+<h3>Concerts à venir : </h3>
+<a href="{{path("concert_concert_add")}}"><button>AJOUTER CONCERT</button></a>
+    <table border = "1px solid black">
+        <tr>
+            <th>Groupe</th>
+            <th>Salle</th>
+            <th>Date</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th></th>
+        </tr>
+        {% for c in concert %}
+            {% if c.place.city == 'Nantes' %}
+                {{c.place.city}}
+                <tr>
+                    {% if c.cancel == 0 %}
+                    <td>{{ c.band.name }}</td>
+                    <td>{{ c.place.name }}</td>
+                    <td>{{ c.startingDate | date("d-m-Y") }}</td>
+                    <td>{{ c.startingDate | date("H:i") }}</td>
+                    <td>{{ c.endingDate | date("H:i") }}</td>
+                    <td><a href="{{ path('concert_concert_cancel', { 'id': c.id } ) }}" >Annuler</a></td>
+                </tr>
+                    {% else %}
+                        <tr style="background-color: red">
+                            <td>{{ c.band.name }}</td>
+                            <td>{{ c.place.name }}</td>
+                            <td>{{ c.startingDate | date("d-m-Y") }}</td>
+                            <td>{{ c.startingDate | date("H:i") }}</td>
+                            <td>{{ c.endingDate | date("H:i") }}</td>
+                            <td><a href="{{ path('concert_concert_cancel', { 'id': c.id } ) }}" >Reprogrammer</a></td>
+                        </tr>
+                    {% endif %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endblock %}

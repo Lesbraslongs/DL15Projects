@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}IMIE - Concert{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <h1>IMIE - Concert</h1>
+            </header>
+            <main class="wrapper">
+                    <section class="content">
+                        {% block content %}{% endblock %}
+                    </section>
+                
+                <nav>
+                    <ul>
+                        <li><a href="{{path("concert_place_index")}}">Salles</a></li>
+                        <li><a href="{{path("concert_band_index")}}">Groupes</a></li>
+                        <li><a href="{{path("concert_concert_index")}}">Concerts</a></li>
+                    </ul>
+                </nav>
+            </main>
+            <footer>IMIE - Nantes - 2016</footer>
+            
+            {% block stylesheets %}
+                <style>
+                    body {
+                        min-height: 100vh;
+                        display : flex;
+                        flex-direction: column;
+                        font-family: Verdana;
+                    }
+                    main {
+                        display: flex;
+                        flex: 1 1 auto;
+                    }
+                    section {
+                        padding-left: 50px;
+                    }
+                    nav {
+                        width: 10em;
+                        order: -1;
+                        border: 2px solid black;
+                        margin-right: 15px;
+                        justify-content: space-between;
+                    }
+                    .content {
+                        flex: 1;
+                        border: 2px solid black;
+                    }
+                    header {
+                        min-height: 50px;
+                        border: 2px solid black;
+                        margin-bottom: 10px;
+                    }
+                    footer {
+                        min-height: 50px;
+                        border: 2px solid black;
+                        margin-top: 10px;
+                    }
+                    button {
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        background-color: red;
+                        height: 50px;
+                        width: 150px;;
+                        border-radius: 25px;
+                        font-weight: bold;
+                        font-size: 1em;
+                    }
+                </style>
+            {% endblock %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
